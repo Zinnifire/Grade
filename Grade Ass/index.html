@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade to Position Converter</title>
+</head>
+<body>
+    <label for="gradeInput">Enter Grade:</label>
+    <input type="text" id="gradeInput"> <br>
+    <button onclick="convertGrade()">Convert</button>
+    <br><br>
+    <label for="positionDisplay">Position:</label>
+    <input type="text" id="positionDisplay" disabled>
+    
+    <script>
+        function convertGrade() {
+            
+            var score = parseInt(document.getElementById('gradeInput').value);
+    
+            var position = '';
+            if (score >= 75 && score <= 100) {
+                position = 'Excellent';
+            } else if (score >= 60 && score <= 74) {
+                position = 'Good';
+            } else if (score >= 50 && score <= 59) {
+                position = 'Credit';
+            } else if (score >= 40 && score <= 49) {
+                position = 'Pass';
+            } else if (score >= 0 && score <= 39) {
+                position = 'Fail';
+            } else {
+                position = 'Invalid Score'; 
+            }
+    
+            
+            document.getElementById('positionDisplay').value = position;
+        }
+    </script>
+    
+
+</body>
+</html>
